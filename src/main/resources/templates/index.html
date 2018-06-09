@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Spring Boot File Download Example</title>
+</head>
+
+<body>
+	<h1>Springboot download file</h1>
+	<p>guideline</p>
+	<a href="https://o7planning.org/en/11765/spring-boot-file-download-example"> https://o7planning.org/en/11765/spring-boot-file-download-example </a>
+
+	<h2>example 1: download file</h2>
+	<p>InputStreamResource resource = new InputStreamResource(new
+		FileInputStream(file));</p>
+	<ul>
+		<li><a th:href="@{/download1}">http://localhost:8080/download1</a></li>
+		<li><a th:href="@{/download1?fileName=abc.zip}">http://localhost:8080/download1?fileName=abc.zip</a></li>
+	</ul>
+	<br>
+
+	<h2>example 2: download file</h2>
+	<p>ByteArrayResource resource = new ByteArrayResource(data);</p>
+	<ul>
+		<li><a th:href="@{/download2}">http://localhost:8080/download2</a></li>
+		<li><a th:href="@{/download2?fileName=abc.zip}">http://localhost:8080/download2?fileName=abc.zip</a></li>
+	</ul>
+
+	<h2>example 3: download file</h2>
+	<p>BufferedOutputStream outStream = new
+		BufferedOutputStream(response.getOutputStream());</p>
+	<ul>
+		<li><a th:href="@{/download3}">http://localhost:8080/download3</a></li>
+		<li><a th:href="@{/download3?fileName=abc.zip}">http://localhost:8080/download3?fileName=abc.zip</a></li>
+	</ul>
+</body>
+</html>
